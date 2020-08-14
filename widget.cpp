@@ -7,7 +7,7 @@
 #include <sstream>
 #include <iomanip>
 #include "fmath.h"
-
+#include <QMessageBox>
 using namespace std;
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -128,6 +128,10 @@ void Widget::on_pushButton_clicked()
                 }
             }
         }
+    }
+    else
+    {
+        QMessageBox::information(NULL,"提示","打开失败");
     }
 
     qDebug()<<m_dataList.size();
@@ -291,6 +295,10 @@ void Widget::on_pushButton_2_clicked()
             }
             outfile<<endl;
         }
+    }
+    else
+    {
+        QMessageBox::information(NULL,"error","打开失败");
     }
 
 }
